@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKILL BUILD - Learn, Build, Succeed</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <img src="image copy 3.png" alt="SKILL BUILD Logo" class="logo-img">
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#roadmap">Roadmap</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                </ul>
+                <div class="nav-right">
+                    <!-- Search Icon and Expandable Input -->
+                    <div class="search-container">
+                        <button class="search-icon-btn" id="searchIconBtn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.35-4.35"></path>
+                            </svg>
+                        </button>
+                        <input 
+                            type="text" 
+                            class="search-input" 
+                            id="searchInput" 
+                            placeholder="Search courses, topics..."
+                        >
+                    </div>
+                    
+                    <div class="nav-auth">
+                        <button class="btn-signin" id="btnSignIn">Sign In</button>
+                        <button class="btn-signup" id="btnSignUp">Sign Up</button>
+                        <div class="user-profile" id="userProfile" style="display: none;">
+                            <div class="avatar" id="userAvatar">U</div>
+                            <button class="btn-logout" id="btnLogout">Logout</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="modal" id="authModal">
+        <div class="modal-content">
+            <span class="modal-close" id="modalClose">&times;</span>
+            
+            <!-- Sign In Form -->
+            <div class="auth-form" id="signInForm">
+                <h2>Welcome Back</h2>
+                <p class="form-subtitle">Sign in to continue learning</p>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="loginEmail">Email</label>
+                        <input type="email" id="loginEmail" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                    </div>
+                    <button type="submit" class="btn-primary btn-full">Sign In</button>
+                </form>
+                <p class="form-switch">
+                    Don't have an account? 
+                    <a href="#" id="switchToSignUp">Sign Up</a>
+                </p>
+            </div>
+
+            <!-- Sign Up Form -->
+            <div class="auth-form" id="signUpForm" style="display: none;">
+                <h2>Create Account</h2>
+                <p class="form-subtitle">Start your learning journey</p>
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label for="registerName">Name</label>
+                        <input type="text" id="registerName" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerEmail">Email</label>
+                        <input type="email" id="registerEmail" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPassword">Password</label>
+                        <input type="password" id="registerPassword" placeholder="Create a password" required>
+                    </div>
+                    <button type="submit" class="btn-primary btn-full">Sign Up</button>
+                </form>
+                <p class="form-switch">
+                    Already have an account? 
+                    <a href="#" id="switchToSignIn">Sign In</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">SKILL BUILD</h1>
+                <p class="hero-subtitle">Learn, build, and become job-ready with guided roadmaps</p>
+                <button class="btn-hero" id="btnGetStarted">Get Started</button>
+                
+                <!-- Progress Tracker -->
+                <div class="progress-tracker" id="progressTracker" style="display: none;">
+                    <div class="progress-header">
+                        <span class="progress-label">Your Learning Progress</span>
+                        <span class="progress-percentage" id="progressPercentage">65%</span>
+                    </div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar-fill" id="progressBarFill" style="width: 65%;"></div>
+                    </div>
+                    <p class="progress-message">Keep going! You're doing great!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose SKILL BUILD?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📍</div>
+                    <h3>Step-by-step roadmaps</h3>
+                    <p>Clear learning paths designed to take you from beginner to professional</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎥</div>
+                    <h3>Video tutorials</h3>
+                    <p>High-quality video content from industry experts</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💻</div>
+                    <h3>Practice projects</h3>
+                    <p>Real-world projects to build your portfolio</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI doubt solver</h3>
+                    <p>Get instant answers to your coding questions</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Career guidance</h3>
+                    <p>Expert advice to help you land your dream job</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>Notes & resources</h3>
+                    <p>Comprehensive study materials and references</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="courses" id="courses">
+        <div class="container">
+            <h2 class="section-title">Popular Courses</h2>
+            <div class="courses-grid" id="coursesGrid">
+                <!-- Course 1 -->
+                <div class="course-card">
+    <div class="course-image">
+        <img src="image copy.png" alt="Web Development">
+    </div>
+    <div class="course-content">
+        <h3>Full Stack Development</h3>
+        <p>Master frontend and backend with React, Node.js, and databases</p>
+        <div class="course-meta">
+            <span>⏱️ 16 weeks</span>
+            <span>📊 Intermediate</span>
+        </div>
+    </div>
+</div>
+
+                <!-- Course 2 -->
+                <div class="course-card">
+    <div class="course-image">
+        <img src="image copy 4.png" alt="Cyber Security">
+    </div>
+    <div class="course-content">
+        <h3>Cyber Security</h3>
+        <p>Learn ethical hacking, network security, and penetration testing</p>
+        <div class="course-meta">
+            <span>⏱️ 12 weeks</span>
+            <span>📊 Advanced</span>
+        </div>
+    </div>
+</div>
+
+                <!-- Course 3 -->
+                <div class="course-card">
+    <div class="course-image">
+        <img src="image copy 2.png" alt="AI / Machine Learning">
+    </div>
+    <div class="course-content">
+        <h3>AI / Machine Learning</h3>
+        <p>Build intelligent systems with Python, TensorFlow, and neural networks</p>
+        <div class="course-meta">
+            <span>⏱️ 18 weeks</span>
+            <span>📊 Advanced</span>
+        </div>
+    </div>
+</div>
+
+                <!-- Course 4 (Hidden initially) -->
+                <div class="course-card course-hidden">
+    <div class="course-image">
+        <img src="image copy 5.png" alt="Digital Electronics">
+    </div>
+    <div class="course-content">
+        <h3>Digital Electronics</h3>
+        <p>Logic gates, circuits, and microprocessor fundamentals</p>
+        <div class="course-meta">
+            <span>⏱️ 10 weeks</span>
+            <span>📊 Intermediate</span>
+        </div>
+    </div>
+</div>
+
+                <!-- Course 5 (Hidden initially) -->
+                <div class="course-card course-hidden">
+    <div class="course-image">
+        <img src="image copy 6.png" alt="Embedded Systems">
+    </div>
+    <div class="course-content">
+        <h3>Embedded Systems</h3>
+        <p>IoT, Arduino, Raspberry Pi, and hardware programming</p>
+        <div class="course-meta">
+            <span>⏱️ 14 weeks</span>
+            <span>📊 Intermediate</span>
+        </div>
+    </div>
+</div>
+
+                <!-- Course 6 (Hidden initially) -->
+               <div class="course-card course-hidden">
+    <div class="course-image">
+        <img src="image copy 7.png" alt="Business Analytics">
+    </div>
+    <div class="course-content">
+        <h3>Business Analytics</h3>
+        <p>Data-driven decision making with Excel, SQL, and visualization tools</p>
+        <div class="course-meta">
+            <span>⏱️ 10 weeks</span>
+            <span>📊 Beginner</span>
+        </div>
+    </div>
+</div>
+
+                <!-- Course 7 (Hidden initially) -->
+                <div class="course-card course-hidden">
+    <div class="course-image">
+        <img src="image copy 8.png" alt="Digital Marketing">
+    </div>
+    <div class="course-content">
+        <h3>Digital Marketing</h3>
+        <p>SEO, social media, content strategy, and online advertising</p>
+        <div class="course-meta">
+            <span>⏱️ 8 weeks</span>
+            <span>📊 Beginner</span>
+        </div>
+    </div>
+</div>
+
+            <div class="courses-more-container">
+                <button class="btn-more" id="btnMoreCourses">
+                    More 
+                    <span class="arrow-icon">→</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section class="roadmap" id="roadmap">
+        <div class="container">
+            <h2 class="section-title">Learning Roadmaps</h2>
+            
+            <!-- Roadmap Topic Cards -->
+            <div class="roadmap-topics" id="roadmapTopics">
+                <div class="roadmap-topic-card" data-topic="cse">
+                    <div class="topic-icon">💻</div>
+                    <h3>CSE</h3>
+                    <p>Computer Science & Engineering</p>
+                    <div class="topic-arrow">→</div>
+                </div>
+                <div class="roadmap-topic-card" data-topic="ece">
+                    <div class="topic-icon">⚡</div>
+                    <h3>ECE</h3>
+                    <p>Electronics & Communication</p>
+                    <div class="topic-arrow">→</div>
+                </div>
+                <div class="roadmap-topic-card" data-topic="business">
+                    <div class="topic-icon">💼</div>
+                    <h3>Business</h3>
+                    <p>Management & Strategy</p>
+                    <div class="topic-arrow">→</div>
+                </div>
+            </div>
+
+            <!-- Full Roadmap View -->
+            <div class="roadmap-detail" id="roadmapDetail" style="display: none;">
+                <button class="btn-back" id="btnBackToRoadmaps">
+                    <span class="back-arrow">←</span> Back to Roadmaps
+                </button>
+                
+                <!-- CSE Roadmap -->
+                <div class="roadmap-content" id="roadmapCSE" style="display: none;">
+                    <div class="roadmap-header">
+                        <div class="roadmap-header-icon">💻</div>
+                        <div>
+                            <h3>Computer Science & Engineering</h3>
+                            <p>Complete learning path for software development</p>
+                        </div>
+                    </div>
+                    <div class="roadmap-path">
+                        <div class="roadmap-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Programming Fundamentals</h4>
+                                <p>Learn C, C++, or Python basics. Understand variables, loops, functions, and basic syntax</p>
+                                <div class="step-duration">⏱️ 4 weeks</div>
+                            </div>
+                        </div>
+                        <div class="roadmap-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Data Structures & Algorithms</h4>
+                                <p>Master arrays, linked lists, stacks, queues, trees, graphs, sorting and searching algorithms</p>
+                                <div class="step-duration">⏱️ 6 weeks</div>
+                            </div>
+                        </div>
+                        <div class="roadmap-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Object-Oriented Programming</h4>
+                                <p>Learn OOP concepts: classes, objects, inheritance, polymorphism, encapsulation</p>
+                                <div class="step-duration">⏱️ 3 weeks</div>
+                            </div>
+                        </div>
+                        <div class="roadmap-step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>Web Development Basics</h4>
+                                <p>HTML, CSS, JavaScript fundamentals. Build responsive websites</p>
+                                <div class="step-duration">⏱️ 4 weeks</div>
+                            </div>
+                        </div>
+                        <div class="roadmap-step">
+                            <div class="step-number">5</div>
+                            <div class="step-content">
+                                <h4>Backend Development</h4>
+                                <p>Node.js, Express, REST APIs, authentication, and server-side programming</p>
+                                <div class="step-duration">⏱️ 5 weeks</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ECE Roadmap -->
+                <div class="roadmap-content" id="roadmapECE" style="display: none;">
+                    <div class="roadmap-header">
+                        <div class="roadmap-header-icon">⚡</div>
+                        <div>
+                            <h3>Electronics & Communication Engineering</h3>
+                            <p>Master electronics, embedded systems, and communication technologies</p>
+                        </div>
+                    </div>
+                    <div class="roadmap-path">
+                        <div class="roadmap-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Basic Electrical Engineering</h4>
+                                <p>Voltage, current, resistance, Ohm's law, Kirchhoff's laws</p>
+                                <div class="step-duration">⏱️ 3 weeks</div>
+                            </div>
+                        </div>
+                        <div class="roadmap-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Circuit Analysis</h4>
+                                <p>AC/DC circuits, network theorems, transient analysis</p>
+                                <div class="step-duration">⏱️ 4 weeks</div>
+                            </div>
+                        </div>
+                        <div class="roadmap-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Digital Electronics</h4>
+                                <p>Logic gates, Boolean algebra, combinational and sequential circuits</p>
+                                <div class="step-duration">⏱️ 5 weeks</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Business Roadmap -->
+                <div class="roadmap-content" id="roadmapBUSINESS" style="display: none;">
+                    <div class="roadmap-header">
+                        <div class="roadmap-header-icon">💼</div>
+                        <div>
+                            <h3>Business Management</h3>
+                            <p>Build expertise in business strategy and management</p>
+                        </div>
+                    </div>
+                    <div class="roadmap-path">
+                        <div class="roadmap-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Business Foundations</h4>
+                                <p>Introduction to Business, Business Models, Accounting & Finance Basics</p>
+                                <div class="step-duration">⏱️ 4 weeks</div>
+                            </div>
+                        </div>
+                        <div class="roadmap-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Tools & Data Skills</h4>
+                                <p>Excel Fundamentals, Advanced Excel, Data Handling & Reporting</p>
+                                <div class="step-duration">⏱️ 4 weeks</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2 class="section-title">Practice Projects</h2>
+            <div class="projects-grid" id="projectsGrid">
+                <div class="project-card">
+                    <div class="project-image"><img src="image.png" alt="E-Commerce Platform"></div>
+                    <div class="project-content">
+                        <h3>E-Commerce Platform</h3>
+                        <p>Full-featured shopping site with cart, payment integration, and admin dashboard</p>
+                        <div class="project-tags">
+                            <span class="tag">React</span><span class="tag">Node.js</span><span class="tag">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image"><img src="image copy 10.png" alt="AI Chatbot Assistant"></div>
+                    <div class="project-content">
+                        <h3>AI Chatbot Assistant</h3>
+                        <p>Intelligent chatbot using NLP and machine learning for customer support</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span><span class="tag">TensorFlow</span><span class="tag">NLP</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image"><img src="image copy 11.png" alt="Sales Analytics Dashboard"></div>
+                    <div class="project-content">
+                        <h3>Sales Analytics Dashboard</h3>
+                        <p>Interactive dashboard with real-time data visualization and business insights</p>
+                        <div class="project-tags">
+                            <span class="tag">Power BI</span><span class="tag">SQL</span><span class="tag">Excel</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card project-hidden">
+                    <div class="project-image"><img src="image copy 12.png" alt="IoT Smart Home System"></div>
+                    <div class="project-content">
+                        <h3>IoT Smart Home System</h3>
+                        <p>Home automation using ESP32, sensors, and mobile app control</p>
+                        <div class="project-tags">
+                            <span class="tag">Arduino</span><span class="tag">IoT</span><span class="tag">C++</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card project-hidden">
+                    <div class="project-image"><img src="image copy 13.png" alt="Portfolio Website Builder"></div>
+                    <div class="project-content">
+                        <h3>Portfolio Website Builder</h3>
+                        <p>Drag-and-drop portfolio creator with custom templates and hosting</p>
+                        <div class="project-tags">
+                            <span class="tag">JavaScript</span><span class="tag">HTML/CSS</span><span class="tag">Firebase</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="projects-more-container">
+                <button class="btn-more" id="btnMoreProjects">More <span class="arrow-icon">→</span></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Students Say</h2>
+            <div class="testimonials-slider">
+                <div class="testimonial-card active">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">SKILL BUILD's roadmaps helped me land my dream job. The structured learning path made complex topics easy to understand!</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">R</div>
+                        <div class="author-info">
+                            <h4>Rahul Kumar</h4>
+                            <p>CSE Student</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">The Business Analytics course transformed my career. Now I make data-driven decisions with confidence!</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">P</div>
+                        <div class="author-info">
+                            <h4>Priya Sharma</h4>
+                            <p>Business Analyst Aspirant</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">Excellent platform for ECE students. The embedded systems projects gave me hands-on experience that employers value.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">A</div>
+                        <div class="author-info">
+                            <h4>Arjun Patel</h4>
+                            <p>ECE Student</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">The AI doubt solver is a game-changer! I get instant help whenever I'm stuck, making learning so much smoother.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">S</div>
+                        <div class="author-info">
+                            <h4>Sneha Reddy</h4>
+                            <p>Full Stack Developer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">From zero to job-ready in 4 months! The interview prep course prepared me perfectly for technical rounds.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">V</div>
+                        <div class="author-info">
+                            <h4>Vikram Singh</h4>
+                            <p>Software Engineer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">The digital marketing course helped me start my own business. Practical knowledge that actually works!</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">M</div>
+                        <div class="author-info">
+                            <h4>Meera Joshi</h4>
+                            <p>Entrepreneur</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-dots" id="testimonialDots"></div>
+        </div>
+    </section>
+
+    <!-- My Bot Card Section-->
+    <section class="doubt-support-intro">
+        <div class="container">
+            <h2 class="section-title">Need Help? Clear Your Doubts</h2>
+            <div class="my-bot-wrapper">
+                <div class="support-card my-bot-card" id="myBotCard">
+                    <div class="support-icon-container">
+                        <div class="support-icon">🤖</div>
+                    </div>
+                    <div class="support-content">
+                        <h3>My Bot</h3>
+                        <p>I am your AI bot. Ask doubts anytime and get instant answers.</p>
+                        <button class="btn-support btn-primary-support" id="btnChatAI">Chat with AI</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Doubt Solver Modal -->
+    <div class="ai-chat-modal" id="aiChatModal">
+        <div class="ai-chat-modal-content">
+            <div class="ai-chat-header">
+                <div class="ai-chat-title">
+                    <span class="ai-chat-icon">🤖</span>
+                    <div>
+                        <h3>My Bot</h3>
+                        <p>AI Doubt Solver</p>
+                    </div>
+                </div>
+                <button class="ai-chat-close" id="aiChatClose">&times;</button>
+            </div>
+            
+            <div class="ai-chat-messages" id="aiChatMessages">
+                <div class="chat-message bot-message">
+                    <div class="message-avatar bot">🤖</div>
+                    <div class="message-content">
+                        <p>Hello! I'm your AI assistant. Ask me any coding or learning related questions!</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="ai-chat-input-container">
+                <input 
+                    type="text" 
+                    id="aiChatInput" 
+                    class="ai-chat-input" 
+                    placeholder="Type your question here..."
+                >
+                <button id="aiChatSend" class="ai-chat-send-btn">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Connect with Students Section -->
+    <section class="connect-students">
+        <div class="container">
+            <div class="connect-students-wrapper">
+                <div class="support-card student-card">
+                    <div class="support-icon-container">
+                        <div class="support-icon">👥</div>
+                    </div>
+                    <div class="support-content">
+                        <h3>Connect with Students</h3>
+                        <p>Connect to same course people, discuss doubts and explain together.</p>
+                        <button class="btn-support btn-secondary-support" id="btnJoinDiscussion">Join Discussion</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>SKILL BUILD</h3>
+                    <p>Empowering learners to build their future</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#courses">Courses</a></li>
+                        <li><a href="#roadmap">Roadmap</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SKILL BUILD. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Notes Widget -->
+    <div class="notes-widget" id="notesWidget">
+        <div class="notes-button" id="notesButton">
+            <span class="notes-icon">📓</span>
+        </div>
+    </div>
+
+    <!-- Floating Feedback Widget -->
+    <div class="feedback-widget" id="feedbackWidget">
+        <div class="feedback-button" id="feedbackButton">
+            <span class="feedback-icon">💬</span>
+        </div>
+    </div>
+
+    <!-- Notes Modal -->
+    <div class="notes-modal" id="notesModal">
+        <div class="notes-modal-content">
+            <button class="notes-modal-close" id="notesModalClose">&times;</button>
+            <h3>My Notes</h3>
+            <p class="notes-subtitle">Your personal learning notebook</p>
+            <textarea id="notesTextarea" class="notes-textarea" placeholder="Write your notes here..."></textarea>
+            <div class="notes-actions">
+                <button class="btn-save-notes" id="btnSaveNotes">Save Notes</button>
+                <button class="btn-close-notes" id="btnCloseNotes">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Feedback Modal -->
+    <div class="feedback-modal" id="feedbackModal">
+        <div class="feedback-modal-content">
+            <button class="feedback-modal-close" id="feedbackModalClose">&times;</button>
+            <h3>Help us improve SKILL BUILD</h3>
+            <p class="feedback-subtitle">Scan the QR code to give feedback and write your suggestions</p>
+            <div class="qr-code-placeholder">
+                <div class="qr-code-box">
+                    <img src="image copy 14.png" alt="Feedback QR Code" class="qr-code-image">
+                    <p class="qr-label">Scan to give feedback</p>
+                </div>
+            </div>
+            <div class="feedback-instruction">
+                <p>Your feedback helps us improve the learning experience for everyone!</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
