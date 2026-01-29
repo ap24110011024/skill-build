@@ -1,0 +1,1 @@
+Learners have many resources but lack clear guidance and practical exposure. Most platforms do not integrate learning, practice, projects, and mentorship, making it hard to apply knowledge and gain real-world skills.
